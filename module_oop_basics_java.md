@@ -3,20 +3,45 @@
 ## Java ecosystem
 
 - What is the JVM?
+    Java Virtual machine, egy abstrack virtuális gép ami futtatja a java applicationöket lehetővé téve h bármilyen hardware-en wagy op rendszeren elfusson
+    a bytekódot  gépi kódra fordítja az adot géphez
+    memóriakezelés garbage collectior, töbszálú végrehajtás
+
 - What does Java compilation mean?
+    amikor a forráskódot bytecode-á alakítunk  compiller segítségével történik
+
 - What is Java bytecode?
+    egy köztes kód a forráskód és a machinecode közt, a jvm csinlja a forráskódból
+
 - What is the difference between the JRE and the JDK?
+    Java Runtime Environment: Library-k, JVM és más komponenesek amik a java programok futtatásához kell
+    Java Development Kit:java programok létrehozásához debugolásához és fordításához szükséges dolgok
+
 - What is the `Iterable` interface?
+    lehetővé teszi h végigiteráljunk egy collection elemein advanced for looppal(for-each) van egy iteraror() abstrack methodja, ami egy iterator objectet ad vissza, 
+
 - What is the `Collection` interface?
+    a collections hierarchy rootja, minden specifikusabb collection ebből származik le, 
+    a Java Collections Framework része(egy adag class és interface collectionök representálására és manipulálására)
+    extendeli az iterator interface-t
+    altipusok: Set, List Queue stb (a map NEM)
+    methods: size(), contains, add, remove
+
 - What is the `Map` interface?
+    lehetővé teszi h kulcs-érték párokkal dolgozzunk, duplikált key-ek nem lehetnek
 - Compare sets, lists, and queues in Java.
 - Compare `ArrayList` and `LinkedList` in Java.
 - Are sets sorted in Java?
+- How would you implement a HashMap with the use of HashSet?
 
 
 ## Language features
 
 - What control statements are available in Java?
+    Decision making statements(if, if-else, switch,)
+    Loops: while, do-while, for for-each
+    Jump statements: break, continue
+
 - Compare the different looping constructs in Java.
 - Compare the different conditional constructs in Java.
 - What is a `while` loop?
@@ -28,7 +53,18 @@
 ## Type system
 
 - What are primitive types in Java? Give some examples.
+    byte, int, long, float, double, char, boolean
+
 - What is the difference between primitive types and reference types?
+- What are the wrapper classes in Java?
+    Olyan classok amik enkapszulálják/becsomagolják a primitíveket hogy objectként tudjuk kezelni azokat.
+- Miért jó ez?
+    oop principleökkel tudjuk őket kezelni(Inheritence, Polymorphism, methods) és sok feature van a nelyven ami csak objectumokat tud kezelni(pl: Collections, a java.util utility class-ai, stb)
+- What is autoboxing/unboxing?
+    lehetővé teszi h automatikusan convertáljunk primitívek és a wrapper classuk közt, cleanebbé és könnyebben olvashatóvá téve a kódot
+    - Autoboxing: amikor a compiler váltja a primitívet a wrapper classává, akkor történik amikor paraméterkén primitívet adunk át egy olyan methodnak ami wrapper obj-jét várja annak a primitívnek
+    - Unboxing: az autoboxing reverse-je, a compiler a wraper obj-et primitívvé alakítja, ammikor wrapper obj-et adunk át és a method a coresponsive primitívet várja
+
 - What is a class in Java?
 - What is an object in Java?
 - What is a constructor?
@@ -42,8 +78,14 @@
 - Can a static method use non-static members?
 - What does the `final` keyword mean in Java?
 - What does the `abstract` keyword mean in Java?
+    Non-access modifier, classochoz és methodokhoz lehet használni(fieldhez nem)
+    Abstract Method: Csak abstract classban lehet, methodnak nincs body-ja, a class subclassának kell implementálni
+    Abstract class: nem lehet példányosítani, egy instance létrehozásához extendelni kell. tartalmazhat abstract és nem abstract methodokat is
+
 - What is _overloading_ in Java?
+    ugyanaz a methodnév, eltérő paraméterezés, compile-time polymorphism, a compile-olás alatt dől el h melyik methodot használja, nem kell leszármazni
 - What is _overriding_ in Java?
+    Run-time polymorphsm, amikor egy child class felülír egy megörökölt methodot (vagy implementál egy abstract methodot)
 - What is the difference between overloading and overriding?
 - What is `null`?
 - Compare the access modifiers in Java.
